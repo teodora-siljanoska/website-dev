@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useRouter } from 'next/router';
 import search from './assets/searchSVG.svg';
 import purpleS from './assets/purpleSearch.svg';

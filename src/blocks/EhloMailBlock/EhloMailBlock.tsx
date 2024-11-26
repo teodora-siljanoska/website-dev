@@ -630,7 +630,7 @@ function EhloMailBlock({
     return (filteredPrice?.pricePC ?? 0).toFixed(2);
   }
   return (
-    <div className="mx-auto w-[90%] max-w-[1100px] md:w-[90%] xlSpecial:w-[77%] ">
+    (<div className="mx-auto w-[90%] max-w-[1100px] md:w-[90%] xlSpecial:w-[77%] ">
       <div className="flex justify-center gap-5 py-5 font-['Mont-book'] text-lg text-darkGrey">
         <div>Monthly</div>
         <div
@@ -938,7 +938,7 @@ function EhloMailBlock({
         </div>
         {isSubmitted && <AddToCartPopUp />}
       </div>
-    </div>
+    </div>)
   );
 }
 export default EhloMailBlock;

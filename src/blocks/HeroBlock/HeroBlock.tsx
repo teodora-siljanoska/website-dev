@@ -4,7 +4,7 @@ import heroImagePlaceholder from './assets/hero.png';
 import findMediaUrl from '../../../utils/findMediaUrl';
 import { ComponentPageBlocksHero } from '@utils/types';
 import ReactMarkdown from 'react-markdown';
-import Image from 'next/image'; // Import next/image
+import Image from "next/legacy/image"; // Import next/image
 
 function scrollToAgencyHostingVps() {
   const agencyHostingVpsBlock = document.getElementById('pricingcards');

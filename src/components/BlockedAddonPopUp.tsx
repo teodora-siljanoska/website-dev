@@ -13,7 +13,7 @@ interface P {
 function BlockedAddonPopUp({ title, messages, onClose }: P): JSX.Element {
   return (
     // <div className="fixed inset-0 top-0 left-0 z-10 flex h-full w-full after:h-full after:w-full after:bg-black after:opacity-10">
-    <div className="">
+    (<div className="">
       <div className="fixed  top-10 right-0 z-50 flex h-fit w-[374px] flex-col justify-center  overflow-hidden rounded-2xl bg-white text-center shadow-custom md:top-10 md:right-10">
         <div className="border-b-[1px] border-lightGrey font-['Mont-regular'] text-[16px] text-darkGrey">
           <div className="flex items-start  gap-x-2 p-6">
@@ -61,7 +61,7 @@ function BlockedAddonPopUp({ title, messages, onClose }: P): JSX.Element {
           />
         </div>
       </div>
-    </div>
+    </div>)
   );
 }
 export default BlockedAddonPopUp;

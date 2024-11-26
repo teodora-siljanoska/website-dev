@@ -9,7 +9,7 @@ import { CREATE_ORDER, CONFIRM_ORDER } from '@utils/queries';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
 import dropdown from '../../src/blocks/ShoppingCartBlock/assets/arrow.svg';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import visa from '../../src/components/assets/visa.svg';
 import mc from '../../src/components/assets/mc.svg';
 import americanE from '../../src/components/assets/americanExpress.svg';
@@ -364,141 +364,139 @@ export default function Form({
     }
   }, [estimate]);
 
-  return (
-    <>
-      {isLoading && <ProcessingPayment />}
-      <form id="payment-form" onSubmit={handleSubmit}>
-        {estimate && estimate.length !== 0 && !newPayment && (
-          <div className="label-payment w-full">
-            <div>Saved payment methods</div>
-            {estimate.map((payment: any, idx: number) => (
-              <div
-                key={idx}
-                className="flex w-[100%] items-center justify-between gap-2 rounded-[5px] bg-white py-2 pl-2 pr-6"
-              >
-                <div className="flex gap-3">
-                  <input
-                    type="radio"
-                    name="paymentMethod"
-                    id={payment.payment_source.card.brand}
-                    value={payment.payment_source.card.brand}
-                    checked={selectedPaymentMethod === payment}
-                    onChange={() => setSelectedPaymentMethod(payment)}
-                  />
-                  <Image
-                    src={
-                      payment.payment_source.card.brand === 'visa' &&
+  return (<>
+    {isLoading && <ProcessingPayment />}
+    <form id="payment-form" onSubmit={handleSubmit}>
+      {estimate && estimate.length !== 0 && !newPayment && (
+        <div className="label-payment w-full">
+          <div>Saved payment methods</div>
+          {estimate.map((payment: any, idx: number) => (
+            <div
+              key={idx}
+              className="flex w-[100%] items-center justify-between gap-2 rounded-[5px] bg-white py-2 pl-2 pr-6"
+            >
+              <div className="flex gap-3">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  id={payment.payment_source.card.brand}
+                  value={payment.payment_source.card.brand}
+                  checked={selectedPaymentMethod === payment}
+                  onChange={() => setSelectedPaymentMethod(payment)}
+                />
+                <Image
+                  src={
+                    payment.payment_source.card.brand === 'visa' &&
+                      payment.payment_source.type === 'card'
+                      ? visa
+                      : payment.payment_source.card.brand ===
+                        'american_express' &&
                         payment.payment_source.type === 'card'
-                        ? visa
-                        : payment.payment_source.card.brand ===
-                          'american_express' &&
+                        ? americanE
+                        : payment.payment_source.card.brand === 'mastercard' &&
                           payment.payment_source.type === 'card'
-                          ? americanE
-                          : payment.payment_source.card.brand === 'mastercard' &&
-                            payment.payment_source.type === 'card'
-                            ? mc
-                            : payment.payment_source.type === 'google_pay'
-                              ? googlePay
-                              : payment.payment_source.type === 'apple_pay'
-                                ? applePay
-                                : idk
-                    }
-                    alt="logo"
-                  />{' '}
+                          ? mc
+                          : payment.payment_source.type === 'google_pay'
+                            ? googlePay
+                            : payment.payment_source.type === 'apple_pay'
+                              ? applePay
+                              : idk
+                  }
+                  alt="logo"
+                />{' '}
+              </div>
+              <div className="flex flex-col items-end justify-end">
+                <div className="text-[#777777]">
+                  {payment.payment_source.card.masked_number.replace(
+                    /(.{4})/g,
+                    '$1 '
+                  )}
                 </div>
-                <div className="flex flex-col items-end justify-end">
-                  <div className="text-[#777777]">
-                    {payment.payment_source.card.masked_number.replace(
-                      /(.{4})/g,
-                      '$1 '
-                    )}
-                  </div>
-                  <div className="text-grey">
-                    {payment.payment_source.card.brand
-                      .split('_')
-                      .map(
-                        (word: string) =>
-                          word.charAt(0).toUpperCase() + word.slice(1)
-                      )
-                      .join(' ')}
-                  </div>
+                <div className="text-grey">
+                  {payment.payment_source.card.brand
+                    .split('_')
+                    .map(
+                      (word: string) =>
+                        word.charAt(0).toUpperCase() + word.slice(1)
+                    )
+                    .join(' ')}
                 </div>
               </div>
-            ))}
-          </div>
-        )}
-        <div
-          className="mt-9 flex items-center justify-between border-b-[1px] border-liliac/20 font-['Mont-regular']"
-          onClick={() =>
-            newPayment ? setNewPayment(false) : setNewPayment(true)
-          }
-        >
-          <div>Add new payment method</div>
-          <div>
-            <Image
-              alt="image"
-              src={dropdown as string}
-              height={15}
-              width={15}
-              layout="fixed"
-              className={`${newPayment && 'rotate-180'} `}
-            />
-          </div>
+            </div>
+          ))}
         </div>
-        {newPayment && (
-          <PaymentElement
-            className="mt-6"
-            id="card-element"
-            onChange={handleChange}
+      )}
+      <div
+        className="mt-9 flex items-center justify-between border-b-[1px] border-liliac/20 font-['Mont-regular']"
+        onClick={() =>
+          newPayment ? setNewPayment(false) : setNewPayment(true)
+        }
+      >
+        <div>Add new payment method</div>
+        <div>
+          <Image
+            alt="image"
+            src={dropdown as string}
+            height={15}
+            width={15}
+            layout="fixed"
+            className={`${newPayment && 'rotate-180'} `}
+          />
+        </div>
+      </div>
+      {newPayment && (
+        <PaymentElement
+          className="mt-6"
+          id="card-element"
+          onChange={handleChange}
+        />
+      )}
+      <div className="pt-6 pb-10 font-['Mont-regular'] text-sm text-grey">
+        This will become your default payment method.
+      </div>
+      <div className="flex  justify-around">
+        <a
+          href="/shopping-cart"
+          className="justify-center font-['Mont-semibold'] px-[42px] py-[12px] text-base  text-purple transition duration-500 hover:text-liliac lg:text-lg"
+        >
+          Cancel
+        </a>
+        <button
+          type="submit"
+          disabled={isLoading || !stripe || !elements}
+          id="submit"
+          className="font-['Mont-semibold'] justify-center rounded-full border-2 border-darkTeal  bg-darkTeal  px-[42px] py-[12px] text-base  text-white transition		 duration-500 hover:border-2   hover:border-lightTeal hover:bg-lightTeal hover:text-white lg:text-lg"
+        >
+          <span id="button-text">
+            {isLoading ? (
+              <div className="spinner flex gap-2" id="spinner">
+                Pay now{' '}
+                <Image
+                  className="animate-spin"
+                  alt="image"
+                  src={animation.src}
+                  height={25}
+                  width={25}
+                  layout="fixed"
+                />
+              </div>
+            ) : (
+              'Pay now'
+            )}
+          </span>
+        </button>
+        {isErrorFormOpen && (
+          <ErrorForm
+            message={`Sorry, an error occurred after authorising your payment. Do not retry or you may be charged multiple times. Please contact us for assistance.`}
+            emailError={true}
           />
         )}
-        <div className="pt-6 pb-10 font-['Mont-regular'] text-sm text-grey">
-          This will become your default payment method.
-        </div>
-        <div className="flex  justify-around">
-          <a
-            href="/shopping-cart"
-            className="justify-center font-['Mont-semibold'] px-[42px] py-[12px] text-base  text-purple transition duration-500 hover:text-liliac lg:text-lg"
-          >
-            Cancel
-          </a>
-          <button
-            type="submit"
-            disabled={isLoading || !stripe || !elements}
-            id="submit"
-            className="font-['Mont-semibold'] justify-center rounded-full border-2 border-darkTeal  bg-darkTeal  px-[42px] py-[12px] text-base  text-white transition		 duration-500 hover:border-2   hover:border-lightTeal hover:bg-lightTeal hover:text-white lg:text-lg"
-          >
-            <span id="button-text">
-              {isLoading ? (
-                <div className="spinner flex gap-2" id="spinner">
-                  Pay now{' '}
-                  <Image
-                    className="animate-spin"
-                    alt="image"
-                    src={animation.src}
-                    height={25}
-                    width={25}
-                    layout="fixed"
-                  />
-                </div>
-              ) : (
-                'Pay now'
-              )}
-            </span>
-          </button>
-          {isErrorFormOpen && (
-            <ErrorForm
-              message={`Sorry, an error occurred after authorising your payment. Do not retry or you may be charged multiple times. Please contact us for assistance.`}
-              emailError={true}
-            />
-          )}
-        </div>
-        {isError ? (
-          <p className="flex justify-center pt-7 text-center text-[#dc2626] font-['Mont-regular']">
-            {message}
-          </p>
-        ) : null}
-      </form>
-    </>
-  );
+      </div>
+      {isError ? (
+        <p className="flex justify-center pt-7 text-center text-[#dc2626] font-['Mont-regular']">
+          {message}
+        </p>
+      ) : null}
+    </form>
+  </>);
 }

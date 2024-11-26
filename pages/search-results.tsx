@@ -71,7 +71,7 @@ const SearchResults = ({ headerData, footerData }: any) => {
   }, [keyWord]);
 
   return (
-    <Layout
+    (<Layout
       header={headerData}
       footer={footerData}
       showLoginWindow={false}
@@ -89,44 +89,42 @@ const SearchResults = ({ headerData, footerData }: any) => {
             //console.log('item' + item.indexUid, item);
             return item.hits.map((hit: any) => {
               const routeTo = `/${hit.slug}`;
-              return (
-                <>
-                  <Link
-                    href={routeTo}
-                    className="glow-form box-border rounded-lg px-[23px] py-[17px]	"
-                  >
-                    <div className="flex justify-between  text-[16px] ">
-                      <h4 className=" text-liliac font-['Mont-book']">
-                        {hit.title}
-                      </h4>
-                      <h4 className="text-darkTeal font-['Mont-regular'] smallest:hidden md:block">
-                        Visit page
-                      </h4>
-                    </div>
-                    {hit.pageBlocks[0].__component.includes('hero') ? (
-                      <div>
-                        <h4 className="font-['Mont-bold'] text-[20px] uppercase text-purple">
-                          {hit.pageBlocks[0].title.replace(/\*\*/g, '')}
-                        </h4>
-                        <h4
-                          className={`text-galacticBlue text-[14px] hover:decoration-1 ${hit.pageBlocks[0].description ? ' mt-[14px]' : ''
-                            }  font-['Mont-light'] text-darkGrey`}
-                        >
-                          {hit.pageBlocks[0].description}
-                        </h4>
-                      </div>
-                    ) : null}
-                    <h4 className="text-end text-darkTeal smallest:flex md:hidden">
+              return (<>
+                <Link
+                  href={routeTo}
+                  className="glow-form box-border rounded-lg px-[23px] py-[17px]	"
+                >
+                  <div className="flex justify-between  text-[16px] ">
+                    <h4 className=" text-liliac font-['Mont-book']">
+                      {hit.title}
+                    </h4>
+                    <h4 className="text-darkTeal font-['Mont-regular'] smallest:hidden md:block">
                       Visit page
                     </h4>
-                  </Link>
-                </>
-              );
+                  </div>
+                  {hit.pageBlocks[0].__component.includes('hero') ? (
+                    <div>
+                      <h4 className="font-['Mont-bold'] text-[20px] uppercase text-purple">
+                        {hit.pageBlocks[0].title.replace(/\*\*/g, '')}
+                      </h4>
+                      <h4
+                        className={`text-galacticBlue text-[14px] hover:decoration-1 ${hit.pageBlocks[0].description ? ' mt-[14px]' : ''
+                          }  font-['Mont-light'] text-darkGrey`}
+                      >
+                        {hit.pageBlocks[0].description}
+                      </h4>
+                    </div>
+                  ) : null}
+                  <h4 className="text-end text-darkTeal smallest:flex md:hidden">
+                    Visit page
+                  </h4>
+                </Link>
+              </>);
             });
           })}
         </span>
       </div>
-    </Layout>
+    </Layout>)
   );
 };
 

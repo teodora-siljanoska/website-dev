@@ -505,7 +505,7 @@ const TestingModal = ({
     const postRequests = hookReturn[2] as any;
 
     return (
-      <div className="m-auto flex w-[90%] flex-col justify-center">
+      (<div className="m-auto flex w-[90%] flex-col justify-center">
         <div
           id="configuratorDomain"
           className="pb-[48px] pt-[60px] text-center font-['Mont-bold'] text-[28px] text-liliac"
@@ -1140,8 +1140,8 @@ const TestingModal = ({
               <button
                 className="justify-center rounded-full  border-2  border-purple  bg-purple  px-[42px] py-[12px] text-base  text-white transition duration-500 hover:border-2 hover:border-purple hover:bg-white hover:text-purple md:text-lg"
                 onClick={(event: any) => (
-                  handlePost(answeredQuestions as any, postRequests), //Add Core Attributes if you need them here.
-                  onClickAddToCartFinalDomain(
+                  (//Add Core Attributes if you need them here.
+                  handlePost(answeredQuestions as any, postRequests), onClickAddToCartFinalDomain(
                     [
                       {
                         domainName: domains[0],
@@ -1153,8 +1153,7 @@ const TestingModal = ({
                     infoForPerson,
                     answeredQuestions,
                     formAuthCode
-                  ),
-                  event.preventDefault() //Not to refresh the page. Used for testing purposes, you will probably need to adapt this part.
+                  ), event.preventDefault()) //Not to refresh the page. Used for testing purposes, you will probably need to adapt this part.
                 )}
                 disabled={isAdded}
               >
@@ -1194,7 +1193,7 @@ const TestingModal = ({
             )}
           </div>
         </div>
-      </div>
+      </div>)
     );
   }
   return <div />;

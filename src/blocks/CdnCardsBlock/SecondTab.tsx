@@ -273,7 +273,7 @@ function SecondTab({
   };
 
   return (
-    <div className="pt-[38px] pb-[52px]">
+    (<div className="pt-[38px] pb-[52px]">
       <div className='text-center font-["Mont-regular"] text-2xl text-darkGrey'>
         {innerFirstTitle}
       </div>
@@ -442,7 +442,7 @@ function SecondTab({
         </div>
         {isSubmitted && <AddToCartPopUp />}
       </div>
-    </div>
+    </div>)
   );
 }
 export default SecondTab;

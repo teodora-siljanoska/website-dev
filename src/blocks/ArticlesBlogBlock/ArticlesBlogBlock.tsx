@@ -64,7 +64,7 @@ const ArticlesBlogBlock = ({ blogData }: P): JSX.Element => {
   }, [activeTab]);
 
   return (
-    <div
+    (<div
       className="flex min-h-fit flex-col bg-white text-darkGrey heroBreakThree:flex-row"
       ref={ref}
     >
@@ -117,7 +117,7 @@ const ArticlesBlogBlock = ({ blogData }: P): JSX.Element => {
           </div>
           {category.map((cate, index) => {
             return (
-              <div
+              (<div
                 onClick={() => setActiveTab(index)}
                 key={index}
                 className={`${
@@ -127,7 +127,7 @@ const ArticlesBlogBlock = ({ blogData }: P): JSX.Element => {
                 } my-4 cursor-pointer text-left text-2xl sm:text-left sm:text-[26px]`}
               >
                 {category[index].replace(/_/g, ' ')}
-              </div>
+              </div>)
             );
           })}
         </div>
@@ -200,7 +200,7 @@ const ArticlesBlogBlock = ({ blogData }: P): JSX.Element => {
           </div>
         </div>
       </div>
-    </div>
+    </div>)
   );
 };
 

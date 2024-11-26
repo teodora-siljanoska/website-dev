@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Register from '@layout/Auth/Register';
 import Ribbons from './assets/Ribbons.svg';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import headphones from './assets/hp.svg';
 import logo from './assets/logo.svg';
 import RegisterwithSteps from '@layout/Auth/RegisterwithSteps';

@@ -667,7 +667,7 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
   }, [productsData, addonsData, selectedCurrency]);
 
   return (
-    <Layout
+    (<Layout
       showLoginWindow={showLoginWindow}
       setShowLoginWindow={setShowLoginWindow}
       header={headerData}
@@ -841,7 +841,7 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
                         //   color="quaternary"
                         //   clickHandler={() => openEmailForm()}
                         // />
-                        <button
+                        (<button
                           onClick={() => openEmailForm()}
                           className="justify-center rounded-full  border-2  border-darkTeal  bg-white px-[42px] py-[12px]  font-['Mont-semibold'] text-darkTeal transition duration-500   hover:border-2 hover:border-darkTeal hover:bg-darkTeal hover:text-white"
                         >
@@ -860,7 +860,7 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
                           ) : (
                             'To secure checkout'
                           )}
-                        </button>
+                        </button>)
                       )}
                     </div>
                   </div>
@@ -1058,7 +1058,7 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
                     //   color="quaternary"
                     //   clickHandler={() => openEmailForm()}
                     // />
-                    <button
+                    (<button
                       onClick={() => openEmailForm()}
                       className="justify-center rounded-full  border-2  border-darkTeal  bg-white px-[42px] py-[12px]  font-['Mont-semibold'] text-darkTeal transition duration-500   hover:border-2 hover:border-darkTeal hover:bg-darkTeal hover:text-white"
                     >
@@ -1077,7 +1077,7 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
                       ) : (
                         'To secure checkout'
                       )}
-                    </button>
+                    </button>)
                   )}
                 </div>
               </div>
@@ -1085,7 +1085,7 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
           )}
         </div>
       )}
-    </Layout>
+    </Layout>)
   );
 }
 export default ShoppingCartBlock;

@@ -501,514 +501,543 @@ const TestingModal = ({ domains }: testingModalDataProps) => {
     const additionalQuestions = hookReturn[1] as additionalAttributesProps[];
     const postRequests = hookReturn[2] as any;
 
-    return (
-      <>
-        <form className="mb-20 h-full flex-col rounded-2xl bg-liliac/10 p-10">
-          <div className="mx-auto w-[75%] font-['Mont-regular'] text-lg">
-            <div
-              id="configuratorDomain"
-              className="pb-10 text-center font-['Mont-bold'] text-2xl text-purple"
-            >
-              Configure domain registrant for selected domains
-            </div>
-            <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
-              <div className="relative mb-10  flex w-full flex-col lg:mb-0">
-                <>
-                  <label className="ml-4">Registrant first name</label>
-                  <input
-                    name="RegistrantFirstName"
-                    type="text"
-                    required
-                    placeholder="Andrew"
-                    maxLength={100}
-                    minLength={1}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                      setFirstNamePerson(event.target.value.trim());
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantFirstName: event.target.value.trim(),
-                        },
-                      }));
-                    }}
-                    className={`${
-                      formErrors.firstName && 'border-[#ff3333]'
-                    }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                  />
-                  {formErrors.firstName && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.firstName}
-                    </p>
-                  )}
-                </>
-              </div>
-              <div className="relative flex w-full flex-col">
-                <>
-                  <label className="ml-4">Registrant last name</label>
-                  <input
-                    name="RegistrantLastName"
-                    type="text"
-                    required
-                    maxLength={100}
-                    minLength={1}
-                    placeholder="Andreson"
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                      setLastNamePerson(event.target.value.trim());
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantLastName: event.target.value.trim(),
-                        },
-                      }));
-                    }}
-                    className={`${
-                      formErrors.lastName && 'border-[#ff3333]'
-                    }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                  />
-                  {formErrors.lastName && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.lastName}
-                    </p>
-                  )}
-                </>
-              </div>
-            </div>
-            <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
-              <div className="relative mb-10 flex w-full flex-col lg:mb-0">
-                <>
-                  <label className="ml-4">Registrant organisation</label>
-                  <input
-                    name="RegistrantOrganization"
-                    type="text"
-                    required
-                    maxLength={100}
-                    minLength={1}
-                    placeholder="Layershift"
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                      setOrganizationPerson(event.target.value.trim());
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantOrganization: event.target.value.trim(),
-                        },
-                      }));
-                    }}
-                    className={`${
-                      formErrors.organization && 'border-[#ff3333]'
-                    } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                  />
-                  {formErrors.organization && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.organization}
-                    </p>
-                  )}
-                </>
-              </div>
-              <div className="relative mb-10 flex w-full flex-col lg:mb-0">
-                <>
-                  <label className="ml-4">Registrant email address</label>
-                  <input
-                    name="RegistrantEmailAddress"
-                    type="email"
-                    required
-                    maxLength={100}
-                    minLength={1}
-                    placeholder="example@example.com"
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                      setEmailPerson(event.target.value.trim());
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantEmailAddress: event.target.value.trim(),
-                        },
-                      }));
-                    }}
-                    className={`${
-                      formErrors.email && 'border-[#ff3333]'
-                    } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                  />
-                  {formErrors.email && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.email}
-                    </p>
-                  )}
-                </>
-              </div>
-            </div>
-            <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
-              <div className="relative mb-10 flex w-full flex-col lg:mb-0">
-                <>
-                  <label className="ml-4">Registrant address</label>
-                  <Autocomplete
-                    className={`${
-                      formErrors.address && 'border-[#ff3333]'
-                    } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                    apiKey={apiKey}
-                    options={{ types: ['address'] }}
-                    onPlaceSelected={(place) => {
-                      const hasPostalTown = place?.address_components?.some(
-                        (item: any) => item.types.includes('postal_town')
-                      );
-                      const formattedAddress = place?.formatted_address;
-                      const parts = formattedAddress?.split(',');
-
-                      // Set only the first part of the address (e.g., the street name)
-                      const address = parts[0]?.trim();
-
-                      place?.address_components?.forEach((item: any) => {
-                        item?.types?.forEach((type: any) => {
-                          if (hasPostalTown) {
-                            switch (type) {
-                              case 'route':
-                                setAddressPerson(address);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantAddress1: address,
-                                }));
-                                break;
-                              case 'locality':
-                                const city = item?.short_name;
-                                setCityPerson(city);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantCity: city,
-                                }));
-                                break;
-                              case 'postal_town':
-                                const postalTownCity = item?.short_name;
-                                setCityPerson(postalTownCity);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantCity: postalTownCity,
-                                }));
-                                break;
-                              case 'postal_code':
-                                const postalCode = item?.short_name;
-                                setPostalCodePerson(postalCode);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantPostalCode: postalCode,
-                                }));
-                                break;
-                              case 'country':
-                                const country = item?.short_name;
-                                setCountryPerson(country);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantCountry: country,
-                                }));
-                                break;
-                              case 'administrative_area_level_1':
-                                const stateCode = item?.short_name;
-                                setStateCodePerson(stateCode);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantStateProvince: stateCode,
-                                }));
-                                break;
-                            }
-                          } else {
-                            switch (type) {
-                              case 'sublocality':
-                                const sublocality = item?.short_name;
-                                setCityPerson(sublocality);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantCity: sublocality,
-                                }));
-                                break;
-                              case 'route':
-                                setAddressPerson(address);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantAddress1: address,
-                                }));
-                                break;
-                              case 'locality':
-                                const locality = item?.short_name;
-                                setCityPerson(locality);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantCity: locality,
-                                }));
-                                break;
-                              case 'postal_code':
-                                const zipCode = item?.short_name;
-                                setPostalCodePerson(zipCode);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantPostalCode: zipCode,
-                                }));
-                                break;
-                              case 'country':
-                                const countryName = item?.short_name;
-                                setCountryPerson(countryName);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantCountry: countryName,
-                                }));
-                                break;
-                              case 'administrative_area_level_1':
-                                const state = item?.short_name;
-                                setStateCodePerson(state);
-                                setInfoForPerson((prevInfo) => ({
-                                  ...prevInfo,
-                                  RegistrantStateProvince: state,
-                                }));
-                                break;
-                            }
-                          }
-                        });
-                      });
-                    }}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) => {
-                      // Update state when the user manually types an address
-                      setAddressPerson(e.target.value);
-                      setInfoForPerson((prevInfo) => ({
-                        ...prevInfo,
-                        RegistrantAddress1: e.target.value, // Use manually entered value
-                      }));
-                    }}
-                    value={addressPerson} // Ensure the input value is controlled
-                  />
-                  {formErrors.address && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.address}
-                    </p>
-                  )}
-                </>
-              </div>
-              <div className="relative flex w-full flex-col">
-                <>
-                  <label className="ml-4">Registrant city</label>
-                  <input
-                    name="RegistrantCity"
-                    type="text"
-                    required
-                    maxLength={100}
-                    minLength={1}
-                    placeholder="Manchester"
-                    value={cityPerson}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                      setCityPerson(event.target.value.trim());
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantCity: event.target.value.trim(),
-                        },
-                      }));
-                    }}
-                    className={`${
-                      formErrors.city && 'border-[#ff3333]'
-                    }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                  />
-                  {formErrors.city && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.city}
-                    </p>
-                  )}
-                </>
-              </div>
-            </div>
-            <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
-              <div className="relative mb-10 flex w-full flex-col lg:mb-0">
-                <>
-                  <label className="ml-4">Registrant postal code</label>
-                  <input
-                    name="RegistrantPostalCode"
-                    type="text"
-                    required
-                    maxLength={100}
-                    minLength={1}
-                    placeholder="SW1W 0NY"
-                    value={postalCodePerson}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                      setPostalCodePerson(event.target.value.trim());
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantPostalCode: event.target.value.trim(),
-                        },
-                      }));
-                    }}
-                    className={`${
-                      formErrors.postalCode && 'border-[#ff3333]'
-                    } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:w-[70%] lg:text-base`}
-                  />
-                  {formErrors.postalCode && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.postalCode}
-                    </p>
-                  )}
-                </>
-              </div>
-              <div className="select-country relative  mb-10 flex w-full flex-col lg:mb-0">
-                <>
-                  <label className="ml-4">Registrant country</label>
-                  <select
-                    name="RegistrantCountry"
-                    value={countryPerson}
-                    className={`${
-                      formErrors.country && 'border-[#ff3333]'
-                    } scrollbar mt-1 h-11 w-full rounded-lg border-2 border-solid border-lightGrey bg-white pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                    onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-                      setCountryPerson(event.target.value);
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantCountry: event.target.value,
-                        },
-                      }));
-                    }}
-                  >
-                    <option value=""></option>
-                    {CountryList.map((dropdownCountry) => (
-                      <option
-                        key={dropdownCountry.code}
-                        value={dropdownCountry.code}
-                        className="cursor-pointer bg-white py-2 px-4 font-['Mont-semibold'] text-base text-darkGrey hover:bg-purple/10 hover:text-purple"
-                      >
-                        {dropdownCountry.name}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute right-2 bottom-2 z-0">
-                    <Image
-                      alt="image"
-                      src={arrowfull.src}
-                      height={10}
-                      width={10}
-                    />
-                  </div>
-                  {formErrors.country && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.country}
-                    </p>
-                  )}
-                </>
-              </div>
-            </div>
-            <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:grid lg:grid-cols-2">
-              <div className="relative mb-10 flex w-full flex-col lg:mb-0 PhoneInputContainer">
-                <>
-                  <label className="ml-4">Registrant phone number</label>
-                  <PhoneInput
-                    onCountryChange={(country: any) => {
-                      setSelectedCodeCountry(country);
-                    }}
-                    defaultCountry={(countryPerson as any) ?? 'GB'}
-                    international
-                    flagUrl={'/flags/{XX}.svg'}
-                    countryCallingCodeEditable={true}
-                    value={phoneNumberPerson}
-                    onChange={(event: any) => {
-                      setPhoneNumberPerson(event);
-                      // console.log(
-                      //   'TUKAAAA',
-                      //   isValidPhoneNumber('+38972205760'),
-                      //   JSON.stringify(event).slice(1, -1),
-                      //   isValidPhoneNumber(JSON.stringify(event).slice(1, -1))
-                      // );
-
-                      setInfoForPerson((prevInfo) => ({
-                        ...{
-                          ...prevInfo,
-                          RegistrantPhone: event,
-                        },
-                      }));
-                    }}
-                  />
-                  {formErrors.phoneNumber && (
-                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                      {formErrors.phoneNumber}
-                    </p>
-                  )}
-                </>
-              </div>
-              {infoForPerson?.RegistrantCountry === 'US' ||
-              infoForPerson?.RegistrantCountry === 'CA' ||
-              infoForPerson?.RegistrantCountry === 'IN' ? (
-                <div className="relative mb-10 flex w-full flex-col lg:mb-0">
-                  <>
-                    <label className="ml-4">Registrant state code</label>
-                    <input
-                      name="RegistrantStateProvince"
-                      type="text"
-                      required
-                      maxLength={100}
-                      minLength={1}
-                      placeholder="CA"
-                      value={stateCodePerson}
-                      onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                        setStateCodePerson(event.target.value.trim());
-                        setInfoForPerson((prevInfo) => ({
-                          ...{
-                            ...prevInfo,
-                            RegistrantStateProvince: event.target.value.trim(),
-                          },
-                        }));
-                      }}
-                      className={`${
-                        formErrors.stateCode && 'border-[#ff3333]'
-                      }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
-                    />
-                    {formErrors.stateCode && (
-                      <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
-                        {formErrors.stateCode}
-                      </p>
-                    )}
-                  </>
-                </div>
-              ) : null}
-            </div>
-            <div className="flex flex-col ">
+    return (<>
+      <form className="mb-20 h-full flex-col rounded-2xl bg-liliac/10 p-10">
+        <div className="mx-auto w-[75%] font-['Mont-regular'] text-lg">
+          <div
+            id="configuratorDomain"
+            className="pb-10 text-center font-['Mont-bold'] text-2xl text-purple"
+          >
+            Configure domain registrant for selected domains
+          </div>
+          <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
+            <div className="relative mb-10  flex w-full flex-col lg:mb-0">
               <>
-                {additionalQuestions.map((question) => (
-                  <div key={question.Name}>
-                    <div className="flex w-full justify-between">
-                      {question.Options &&
-                        question.Options.Option.length > 0 &&
-                        question.IsChild === '0' && (
-                          <div className="relative flex w-full flex-col">
-                            <div className="mb-5 flex flex-col justify-center">
-                              <label
-                                className="pb-2 pt-8 text-lg"
-                                htmlFor={question.Name}
-                                dangerouslySetInnerHTML={{
-                                  __html: question.Description,
-                                }}
-                              />
-                            </div>
-                            <select
-                              className="mt-1 h-11 w-full rounded-lg border-2 border-lightGrey bg-white pl-2 text-sm text-darkGrey lg:h-12 lg:text-base"
-                              defaultValue=""
-                              name={question.Name}
-                              onChange={(
-                                event: ChangeEvent<HTMLSelectElement>
-                              ) => {
-                                onChangeHandlerSelect(
-                                  question.Name,
-                                  event.target.value,
-                                  question.Options.Option
-                                );
+                <label className="ml-4">Registrant first name</label>
+                <input
+                  name="RegistrantFirstName"
+                  type="text"
+                  required
+                  placeholder="Andrew"
+                  maxLength={100}
+                  minLength={1}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setFirstNamePerson(event.target.value.trim());
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantFirstName: event.target.value.trim(),
+                      },
+                    }));
+                  }}
+                  className={`${
+                    formErrors.firstName && 'border-[#ff3333]'
+                  }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                />
+                {formErrors.firstName && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.firstName}
+                  </p>
+                )}
+              </>
+            </div>
+            <div className="relative flex w-full flex-col">
+              <>
+                <label className="ml-4">Registrant last name</label>
+                <input
+                  name="RegistrantLastName"
+                  type="text"
+                  required
+                  maxLength={100}
+                  minLength={1}
+                  placeholder="Andreson"
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setLastNamePerson(event.target.value.trim());
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantLastName: event.target.value.trim(),
+                      },
+                    }));
+                  }}
+                  className={`${
+                    formErrors.lastName && 'border-[#ff3333]'
+                  }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                />
+                {formErrors.lastName && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.lastName}
+                  </p>
+                )}
+              </>
+            </div>
+          </div>
+          <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
+            <div className="relative mb-10 flex w-full flex-col lg:mb-0">
+              <>
+                <label className="ml-4">Registrant organisation</label>
+                <input
+                  name="RegistrantOrganization"
+                  type="text"
+                  required
+                  maxLength={100}
+                  minLength={1}
+                  placeholder="Layershift"
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setOrganizationPerson(event.target.value.trim());
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantOrganization: event.target.value.trim(),
+                      },
+                    }));
+                  }}
+                  className={`${
+                    formErrors.organization && 'border-[#ff3333]'
+                  } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                />
+                {formErrors.organization && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.organization}
+                  </p>
+                )}
+              </>
+            </div>
+            <div className="relative mb-10 flex w-full flex-col lg:mb-0">
+              <>
+                <label className="ml-4">Registrant email address</label>
+                <input
+                  name="RegistrantEmailAddress"
+                  type="email"
+                  required
+                  maxLength={100}
+                  minLength={1}
+                  placeholder="example@example.com"
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setEmailPerson(event.target.value.trim());
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantEmailAddress: event.target.value.trim(),
+                      },
+                    }));
+                  }}
+                  className={`${
+                    formErrors.email && 'border-[#ff3333]'
+                  } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                />
+                {formErrors.email && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.email}
+                  </p>
+                )}
+              </>
+            </div>
+          </div>
+          <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
+            <div className="relative mb-10 flex w-full flex-col lg:mb-0">
+              <>
+                <label className="ml-4">Registrant address</label>
+                <Autocomplete
+                  className={`${
+                    formErrors.address && 'border-[#ff3333]'
+                  } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                  apiKey={apiKey}
+                  options={{ types: ['address'] }}
+                  onPlaceSelected={(place) => {
+                    const hasPostalTown = place?.address_components?.some(
+                      (item: any) => item.types.includes('postal_town')
+                    );
+                    const formattedAddress = place?.formatted_address;
+                    const parts = formattedAddress?.split(',');
+
+                    // Set only the first part of the address (e.g., the street name)
+                    const address = parts[0]?.trim();
+
+                    place?.address_components?.forEach((item: any) => {
+                      item?.types?.forEach((type: any) => {
+                        if (hasPostalTown) {
+                          switch (type) {
+                            case 'route':
+                              setAddressPerson(address);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantAddress1: address,
+                              }));
+                              break;
+                            case 'locality':
+                              const city = item?.short_name;
+                              setCityPerson(city);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantCity: city,
+                              }));
+                              break;
+                            case 'postal_town':
+                              const postalTownCity = item?.short_name;
+                              setCityPerson(postalTownCity);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantCity: postalTownCity,
+                              }));
+                              break;
+                            case 'postal_code':
+                              const postalCode = item?.short_name;
+                              setPostalCodePerson(postalCode);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantPostalCode: postalCode,
+                              }));
+                              break;
+                            case 'country':
+                              const country = item?.short_name;
+                              setCountryPerson(country);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantCountry: country,
+                              }));
+                              break;
+                            case 'administrative_area_level_1':
+                              const stateCode = item?.short_name;
+                              setStateCodePerson(stateCode);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantStateProvince: stateCode,
+                              }));
+                              break;
+                          }
+                        } else {
+                          switch (type) {
+                            case 'sublocality':
+                              const sublocality = item?.short_name;
+                              setCityPerson(sublocality);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantCity: sublocality,
+                              }));
+                              break;
+                            case 'route':
+                              setAddressPerson(address);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantAddress1: address,
+                              }));
+                              break;
+                            case 'locality':
+                              const locality = item?.short_name;
+                              setCityPerson(locality);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantCity: locality,
+                              }));
+                              break;
+                            case 'postal_code':
+                              const zipCode = item?.short_name;
+                              setPostalCodePerson(zipCode);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantPostalCode: zipCode,
+                              }));
+                              break;
+                            case 'country':
+                              const countryName = item?.short_name;
+                              setCountryPerson(countryName);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantCountry: countryName,
+                              }));
+                              break;
+                            case 'administrative_area_level_1':
+                              const state = item?.short_name;
+                              setStateCodePerson(state);
+                              setInfoForPerson((prevInfo) => ({
+                                ...prevInfo,
+                                RegistrantStateProvince: state,
+                              }));
+                              break;
+                          }
+                        }
+                      });
+                    });
+                  }}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                    // Update state when the user manually types an address
+                    setAddressPerson(e.target.value);
+                    setInfoForPerson((prevInfo) => ({
+                      ...prevInfo,
+                      RegistrantAddress1: e.target.value, // Use manually entered value
+                    }));
+                  }}
+                  value={addressPerson} // Ensure the input value is controlled
+                />
+                {formErrors.address && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.address}
+                  </p>
+                )}
+              </>
+            </div>
+            <div className="relative flex w-full flex-col">
+              <>
+                <label className="ml-4">Registrant city</label>
+                <input
+                  name="RegistrantCity"
+                  type="text"
+                  required
+                  maxLength={100}
+                  minLength={1}
+                  placeholder="Manchester"
+                  value={cityPerson}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setCityPerson(event.target.value.trim());
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantCity: event.target.value.trim(),
+                      },
+                    }));
+                  }}
+                  className={`${
+                    formErrors.city && 'border-[#ff3333]'
+                  }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                />
+                {formErrors.city && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.city}
+                  </p>
+                )}
+              </>
+            </div>
+          </div>
+          <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:flex">
+            <div className="relative mb-10 flex w-full flex-col lg:mb-0">
+              <>
+                <label className="ml-4">Registrant postal code</label>
+                <input
+                  name="RegistrantPostalCode"
+                  type="text"
+                  required
+                  maxLength={100}
+                  minLength={1}
+                  placeholder="SW1W 0NY"
+                  value={postalCodePerson}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                    setPostalCodePerson(event.target.value.trim());
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantPostalCode: event.target.value.trim(),
+                      },
+                    }));
+                  }}
+                  className={`${
+                    formErrors.postalCode && 'border-[#ff3333]'
+                  } mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:w-[70%] lg:text-base`}
+                />
+                {formErrors.postalCode && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.postalCode}
+                  </p>
+                )}
+              </>
+            </div>
+            <div className="select-country relative  mb-10 flex w-full flex-col lg:mb-0">
+              <>
+                <label className="ml-4">Registrant country</label>
+                <select
+                  name="RegistrantCountry"
+                  value={countryPerson}
+                  className={`${
+                    formErrors.country && 'border-[#ff3333]'
+                  } scrollbar mt-1 h-11 w-full rounded-lg border-2 border-solid border-lightGrey bg-white pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                  onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                    setCountryPerson(event.target.value);
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantCountry: event.target.value,
+                      },
+                    }));
+                  }}
+                >
+                  <option value=""></option>
+                  {CountryList.map((dropdownCountry) => (
+                    <option
+                      key={dropdownCountry.code}
+                      value={dropdownCountry.code}
+                      className="cursor-pointer bg-white py-2 px-4 font-['Mont-semibold'] text-base text-darkGrey hover:bg-purple/10 hover:text-purple"
+                    >
+                      {dropdownCountry.name}
+                    </option>
+                  ))}
+                </select>
+                <div className="absolute right-2 bottom-2 z-0">
+                  <Image
+                    alt="image"
+                    src={arrowfull.src}
+                    height={10}
+                    width={10}
+                  />
+                </div>
+                {formErrors.country && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.country}
+                  </p>
+                )}
+              </>
+            </div>
+          </div>
+          <div className="mb-10 justify-between gap-x-20 text-darkGrey lg:grid lg:grid-cols-2">
+            <div className="relative mb-10 flex w-full flex-col lg:mb-0 PhoneInputContainer">
+              <>
+                <label className="ml-4">Registrant phone number</label>
+                <PhoneInput
+                  onCountryChange={(country: any) => {
+                    setSelectedCodeCountry(country);
+                  }}
+                  defaultCountry={(countryPerson as any) ?? 'GB'}
+                  international
+                  flagUrl={'/flags/{XX}.svg'}
+                  countryCallingCodeEditable={true}
+                  value={phoneNumberPerson}
+                  onChange={(event: any) => {
+                    setPhoneNumberPerson(event);
+                    // console.log(
+                    //   'TUKAAAA',
+                    //   isValidPhoneNumber('+38972205760'),
+                    //   JSON.stringify(event).slice(1, -1),
+                    //   isValidPhoneNumber(JSON.stringify(event).slice(1, -1))
+                    // );
+
+                    setInfoForPerson((prevInfo) => ({
+                      ...{
+                        ...prevInfo,
+                        RegistrantPhone: event,
+                      },
+                    }));
+                  }}
+                />
+                {formErrors.phoneNumber && (
+                  <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                    {formErrors.phoneNumber}
+                  </p>
+                )}
+              </>
+            </div>
+            {infoForPerson?.RegistrantCountry === 'US' ||
+            infoForPerson?.RegistrantCountry === 'CA' ||
+            infoForPerson?.RegistrantCountry === 'IN' ? (
+              <div className="relative mb-10 flex w-full flex-col lg:mb-0">
+                <>
+                  <label className="ml-4">Registrant state code</label>
+                  <input
+                    name="RegistrantStateProvince"
+                    type="text"
+                    required
+                    maxLength={100}
+                    minLength={1}
+                    placeholder="CA"
+                    value={stateCodePerson}
+                    onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                      setStateCodePerson(event.target.value.trim());
+                      setInfoForPerson((prevInfo) => ({
+                        ...{
+                          ...prevInfo,
+                          RegistrantStateProvince: event.target.value.trim(),
+                        },
+                      }));
+                    }}
+                    className={`${
+                      formErrors.stateCode && 'border-[#ff3333]'
+                    }  mt-1 h-11 w-full rounded-lg border-2 border-lightGrey pl-2 text-sm text-darkGrey placeholder:pl-3 lg:h-12 lg:text-base`}
+                  />
+                  {formErrors.stateCode && (
+                    <p className="absolute -bottom-6 font-['Mont-light'] text-[10px] text-[#ff3333]">
+                      {formErrors.stateCode}
+                    </p>
+                  )}
+                </>
+              </div>
+            ) : null}
+          </div>
+          <div className="flex flex-col ">
+            <>
+              {additionalQuestions.map((question) => (
+                <div key={question.Name}>
+                  <div className="flex w-full justify-between">
+                    {question.Options &&
+                      question.Options.Option.length > 0 &&
+                      question.IsChild === '0' && (
+                        <div className="relative flex w-full flex-col">
+                          <div className="mb-5 flex flex-col justify-center">
+                            <label
+                              className="pb-2 pt-8 text-lg"
+                              htmlFor={question.Name}
+                              dangerouslySetInnerHTML={{
+                                __html: question.Description,
                               }}
-                            >
-                              <option value="" disabled>
-                                Select
-                              </option>
-                              {question.Options.Option.map((option: any) => (
-                                <option key={option.Title} value={option.Value}>
-                                  {option.Title}
-                                </option>
-                              ))}
-                            </select>
+                            />
                           </div>
-                        )}
+                          <select
+                            className="mt-1 h-11 w-full rounded-lg border-2 border-lightGrey bg-white pl-2 text-sm text-darkGrey lg:h-12 lg:text-base"
+                            defaultValue=""
+                            name={question.Name}
+                            onChange={(
+                              event: ChangeEvent<HTMLSelectElement>
+                            ) => {
+                              onChangeHandlerSelect(
+                                question.Name,
+                                event.target.value,
+                                question.Options.Option
+                              );
+                            }}
+                          >
+                            <option value="" disabled>
+                              Select
+                            </option>
+                            {question.Options.Option.map((option: any) => (
+                              <option key={option.Title} value={option.Value}>
+                                {option.Title}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      )}
+                  </div>
+                  {!question.Options && question.IsChild === '0' && (
+                    <div className="flex w-full flex-col items-start pt-8 text-lg">
+                      <>
+                        <label
+                          htmlFor={question.Name}
+                          dangerouslySetInnerHTML={{
+                            __html: question.Description,
+                          }}
+                        />
+                        <input
+                          className="mt-2 h-10 w-full rounded-lg bg-white pl-2"
+                          required
+                          onChange={(
+                            event: ChangeEvent<HTMLInputElement>
+                          ) => {
+                            onChangeHandlerInput(
+                              question.Name,
+                              event.target.value
+                            );
+                          }}
+                          name={question.Name}
+                        />
+                      </>
                     </div>
-                    {!question.Options && question.IsChild === '0' && (
-                      <div className="flex w-full flex-col items-start pt-8 text-lg">
+                  )}
+                  {!question.Options &&
+                    question.IsChild === '1' &&
+                    parentQuestions.find(
+                      (answer) => answer.childQuestion === question.Name
+                    ) && (
+                      <div>
                         <>
                           <label
+                            className="flex flex-col pt-8 text-lg"
                             htmlFor={question.Name}
                             dangerouslySetInnerHTML={{
                               __html: question.Description,
@@ -1030,137 +1059,105 @@ const TestingModal = ({ domains }: testingModalDataProps) => {
                         </>
                       </div>
                     )}
-                    {!question.Options &&
-                      question.IsChild === '1' &&
-                      parentQuestions.find(
-                        (answer) => answer.childQuestion === question.Name
-                      ) && (
-                        <div>
-                          <>
-                            <label
-                              className="flex flex-col pt-8 text-lg"
-                              htmlFor={question.Name}
-                              dangerouslySetInnerHTML={{
-                                __html: question.Description,
-                              }}
-                            />
-                            <input
-                              className="mt-2 h-10 w-full rounded-lg bg-white pl-2"
-                              required
-                              onChange={(
-                                event: ChangeEvent<HTMLInputElement>
-                              ) => {
-                                onChangeHandlerInput(
-                                  question.Name,
-                                  event.target.value
-                                );
-                              }}
-                              name={question.Name}
-                            />
-                          </>
-                        </div>
-                      )}
-                    {question.Options &&
-                      question.IsChild === '1' &&
-                      parentQuestions.find(
-                        (answer) => answer.childQuestion === question.Name
-                      ) && (
-                        <div className="pt-8 text-lg">
-                          <>
-                            <label
-                              htmlFor={question.Name}
-                              dangerouslySetInnerHTML={{
-                                __html: question.Description,
-                              }}
-                            />
+                  {question.Options &&
+                    question.IsChild === '1' &&
+                    parentQuestions.find(
+                      (answer) => answer.childQuestion === question.Name
+                    ) && (
+                      <div className="pt-8 text-lg">
+                        <>
+                          <label
+                            htmlFor={question.Name}
+                            dangerouslySetInnerHTML={{
+                              __html: question.Description,
+                            }}
+                          />
 
-                            <select
-                              className="h-10 rounded-lg bg-white pl-2"
-                              defaultValue=""
-                              name={question.Name}
-                              onChange={(
-                                event: ChangeEvent<HTMLSelectElement>
-                              ) => {
-                                onChangeHandlerSelect(
-                                  question.Name,
-                                  event.target.value,
-                                  question.Options.Option
-                                );
-                              }}
-                            >
-                              <option value="" disabled>
-                                Select
+                          <select
+                            className="h-10 rounded-lg bg-white pl-2"
+                            defaultValue=""
+                            name={question.Name}
+                            onChange={(
+                              event: ChangeEvent<HTMLSelectElement>
+                            ) => {
+                              onChangeHandlerSelect(
+                                question.Name,
+                                event.target.value,
+                                question.Options.Option
+                              );
+                            }}
+                          >
+                            <option value="" disabled>
+                              Select
+                            </option>
+                            {question.Options.Option.map((option: any) => (
+                              <option key={option.Title} value={option.Value}>
+                                {option.Title}
                               </option>
-                              {question.Options.Option.map((option: any) => (
-                                <option key={option.Title} value={option.Value}>
-                                  {option.Title}
-                                </option>
-                              ))}
-                            </select>
-                          </>
-                        </div>
-                      )}
+                            ))}
+                          </select>
+                        </>
+                      </div>
+                    )}
+                </div>
+              ))}
+            </>
+          </div>
+          <div className="relative mt-5 mb-4 flex w-full flex-col justify-center gap-x-2 md:flex-row">
+            <div className="mt-3 text-center">
+              <span>
+                <button
+                  className="justify-center rounded-full border-2 border-purple bg-white px-[42px] py-[12px] font-['Mont-semibold'] text-base  text-purple transition duration-500 hover:border-2   hover:border-purple hover:bg-purple hover:text-white md:text-base"
+                  onClick={(event: any) => (
+                    (//Add Core Attributes if you need them here.
+                    handlePost(answeredQuestions as any, postRequests), onClickAddToCartFinalDomain(
+                      domainCart,
+                      type,
+                      infoForPerson,
+                      answeredQuestions
+                    ), event.preventDefault()) //Not to refresh the page. Used for testing purposes, you will probably need to adapt this part.
+                  )}
+                  disabled={isAdded}
+                >
+                  {isLoading ? (
+                    <div className="spinner flex gap-2" id="spinner">
+                      Add to cart{' '}
+                      <Image
+                        className="animate-spin"
+                        alt="image"
+                        src={animation.src}
+                        height={25}
+                        width={25}
+                        layout="fixed"
+                      />
+                    </div>
+                  ) : (
+                    'Add to cart'
+                  )}
+                </button>
+              </span>
+              {isSubmitted}
+              {!addressPerson ||
+                !cityPerson ||
+                !countryPerson ||
+                !emailPerson ||
+                !firstNamePerson ||
+                !lastNamePerson ||
+                !organizationPerson ||
+                !phoneNumberPerson ||
+                (!postalCodePerson && (
+                  <div className="absolute pl-2 pt-2 text-xs font-extrabold text-pink">
+                    All input fields must be filled.
                   </div>
                 ))}
-              </>
-            </div>
-            <div className="relative mt-5 mb-4 flex w-full flex-col justify-center gap-x-2 md:flex-row">
-              <div className="mt-3 text-center">
-                <span>
-                  <button
-                    className="justify-center rounded-full border-2 border-purple bg-white px-[42px] py-[12px] font-['Mont-semibold'] text-base  text-purple transition duration-500 hover:border-2   hover:border-purple hover:bg-purple hover:text-white md:text-base"
-                    onClick={(event: any) => (
-                      handlePost(answeredQuestions as any, postRequests), //Add Core Attributes if you need them here.
-                      onClickAddToCartFinalDomain(
-                        domainCart,
-                        type,
-                        infoForPerson,
-                        answeredQuestions
-                      ),
-                      event.preventDefault() //Not to refresh the page. Used for testing purposes, you will probably need to adapt this part.
-                    )}
-                    disabled={isAdded}
-                  >
-                    {isLoading ? (
-                      <div className="spinner flex gap-2" id="spinner">
-                        Add to cart{' '}
-                        <Image
-                          className="animate-spin"
-                          alt="image"
-                          src={animation.src}
-                          height={25}
-                          width={25}
-                          layout="fixed"
-                        />
-                      </div>
-                    ) : (
-                      'Add to cart'
-                    )}
-                  </button>
-                </span>
-                {isSubmitted}
-                {!addressPerson ||
-                  !cityPerson ||
-                  !countryPerson ||
-                  !emailPerson ||
-                  !firstNamePerson ||
-                  !lastNamePerson ||
-                  !organizationPerson ||
-                  !phoneNumberPerson ||
-                  (!postalCodePerson && (
-                    <div className="absolute pl-2 pt-2 text-xs font-extrabold text-pink">
-                      All input fields must be filled.
-                    </div>
-                  ))}
-                {errorMessage && (
-                  <ErrorAddToCartPopUp message="Some fields are incorrect. Please review and correct the highlighted errors." />
-                )}
-              </div>
+              {errorMessage && (
+                <ErrorAddToCartPopUp message="Some fields are incorrect. Please review and correct the highlighted errors." />
+              )}
             </div>
           </div>
-        </form>
-      </>
-    );
+        </div>
+      </form>
+    </>);
   }
   return <div />;
 };

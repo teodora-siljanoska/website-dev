@@ -3,7 +3,7 @@ import Button from '@components/Button';
 import { useRouter } from 'next/router';
 import logo from '../register/assets/logo.svg';
 import headphones from '../register/assets/hp.svg';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Ribbons from '../register/assets/Ribbons.svg';
 import ReactMarkdown from 'react-markdown';
 import { Elements } from '@stripe/react-stripe-js';

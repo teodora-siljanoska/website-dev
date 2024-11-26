@@ -351,7 +351,7 @@ function FirstTab({
   };
 
   return (
-    <div className="pt-[38px] pb-[52px]">
+    (<div className="pt-[38px] pb-[52px]">
       <div className='text-center font-["Mont-regular"] text-2xl text-darkGrey'>
         {innerFirstTitle}
       </div>
@@ -532,7 +532,7 @@ function FirstTab({
         </div>
         {isSubmitted && <AddToCartPopUp />}
       </div>
-    </div>
+    </div>)
   );
 }
 export default FirstTab;

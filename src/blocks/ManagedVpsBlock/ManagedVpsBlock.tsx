@@ -371,7 +371,7 @@ function ManagedVpsBlock({
     return (filteredPrice?.pricePC ?? 0).toFixed(2);
   }
   return (
-    <div className="container mx-auto smallest:w-[90%]">
+    (<div className="container mx-auto smallest:w-[90%]">
       <div className="flex justify-center gap-5 py-5 font-['Mont-book'] text-lg text-darkGrey">
         <div>Monthly</div>
         <div
@@ -382,7 +382,6 @@ function ManagedVpsBlock({
         </div>
         <div>Annual</div>
       </div>
-
       <div className=" flex  flex-col gap-[46px] rounded-t-[10px] bg-liliac/10 px-[30px] py-[68px]">
         {vpsCheck && (
           <div className="m-auto grid gap-y-[40px] gap-x-[20px] px-0 md:grid-cols-3 lg:w-[80%] lg:gap-x-[84px] lg:px-5	">
@@ -668,7 +667,7 @@ function ManagedVpsBlock({
           </div>
         </div>
       </div>
-    </div>
+    </div>)
   );
 }
 export default ManagedVpsBlock;

@@ -535,7 +535,7 @@ function AgencyHostingVpsBlock({
     return (filteredPrice?.pricePC ?? 0).toFixed(2);
   }
   return (
-    <div id="pricingcards" className="relative">
+    (<div id="pricingcards" className="relative">
       <div className="container mx-auto smallest:w-[90%]">
         <div className="flex justify-center gap-5 py-5 font-['Mont-book'] text-lg text-darkGrey">
           <div>Monthly</div>
@@ -916,7 +916,7 @@ function AgencyHostingVpsBlock({
           {isSubmitted && <AddToCartPopUp />}
         </div>
       </div>
-    </div>
+    </div>)
   );
 }
 export default AgencyHostingVpsBlock;
