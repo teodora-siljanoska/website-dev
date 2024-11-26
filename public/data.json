@@ -1,0 +1,155 @@
+{
+  "locations": [
+    { "name": "Manchester, UK" },
+    { "name": "Chicago, USA" },
+    { "name": "Phoneix, USA" },
+    { "name": "Signapore" }
+  ],
+
+  "ipaddresses": [
+    { "name": "Single" },
+    { "name": "10 IPv" },
+    { "name": "30 IPv" },
+    { "name": "Unlimited" }
+  ],
+  "pleskWebAdmin": [
+    {
+      "name": "Plesk Web Admin",
+      "descriptions": ["10 domains"],
+      "price": "+ $11"
+    },
+    {
+      "name": "Plesk Web Pro Edition",
+      "descriptions": ["30 domains"],
+      "price": "+ $17"
+    },
+    {
+      "name": "Titanium",
+      "descriptions": ["Unlimited domains"],
+      "price": "+ $28"
+    }
+  ],
+  "pleskEmailSecurity": [
+    {
+      "name": "Plesk Email Security",
+      "descriptions": [""],
+      "price": "Free"
+    },
+    {
+      "name": "Plesk Email Security Pro",
+      "descriptions": [""],
+      "price": "+ $5"
+    }
+  ],
+  "immunifyAV": [
+    {
+      "name": "ImmunifyAV",
+      "descriptions": ["10 domains"],
+      "price": "Free"
+    },
+    {
+      "name": "ImmunifyAV+",
+      "descriptions": ["30 domains"],
+      "price": "+ $5"
+    },
+    {
+      "name": "Immunify360",
+      "descriptions": ["Single user"],
+      "price": "+ $11"
+    },
+    {
+      "name": "Immunify360 30",
+      "descriptions": ["30 users"],
+      "price": "+ $21"
+    },
+    {
+      "name": "Immunify360 250",
+      "descriptions": ["250 users"],
+      "price": "+ $30"
+    },
+    {
+      "name": "Immunify360 U",
+      "descriptions": ["Unlimited users"],
+      "price": "+ $40"
+    }
+  ],
+  "cloudLinuxSolo": [
+    {
+      "name": "Cloud Linux Solo",
+      "descriptions": ["10 domains"],
+      "price": "Free"
+    },
+    {
+      "name": "Cloud Linux Shared ",
+      "descriptions": ["Pro"],
+      "price": "+ $5"
+    },
+    {
+      "name": "LiteSpeed Lite",
+      "descriptions": ["Web Host Lite (Up to 8GB)"],
+      "price": "+ $22"
+    },
+    {
+      "name": "LiteSpeed Essential",
+      "descriptions": ["Web Host Essential \n", "(More than 8GB)"],
+      "price": "+ $30"
+    }
+  ],
+  "silver": [
+    {
+      "name": "Silver",
+      "descriptions": [
+        "-1 Backup per week \n",
+        "-10 day retention \n",
+        "-Offsite"
+      ],
+      "price": "Free"
+    },
+    {
+      "name": "Gold",
+      "descriptions": [
+        "-1 Backup per week \n",
+        "-10 day retention \n",
+        "-Offsite \n"
+      ],
+      "price": "+ $10"
+    },
+    {
+      "name": "Titanium",
+      "descriptions": ["-1 Backup per week", "-10 day retention", "-Offsite"],
+      "price": "+ $20"
+    }
+  ],
+  "essential": [
+    {
+      "name": "Essential",
+      "descriptions": [
+        "-Ticket initial response: 3h \n",
+        "-24/7/365 E-mail support \n",
+        "-Something"
+      ],
+      "price": "Free"
+    },
+    {
+      "name": "Advanced",
+      "descriptions": [
+        "-Ticket initial response: 2h \n",
+        "-24/7/365 Email & chat support \n",
+        "-15min. live chat support \n"
+      ],
+      "price": "+ $10"
+    },
+    {
+      "name": "Premium",
+      "descriptions": [
+        "-Ticket initial response: 1h \n",
+        "-24/7/365 Email & chat support \n",
+        "-Dedicated phone support \n"
+      ],
+      "price": "+ $20"
+    }
+  ],
+  "RAM": ["2 GB", "4 GB", "6 GB"],
+  "CPU": ["4 vCPU", "5 vCPU", "6 vCPU"],
+  "SSD": ["100 GB", "125 GB", "150 GB"]
+}

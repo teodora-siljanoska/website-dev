@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "jsxImportSource": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@blocks/*": ["./src/blocks/*"],
+      "@layout/*": ["./src/layout/*"],
+      "@utilityComponents/*": ["./src/utilityComponents/*"],
+      "@utils/*": ["./utils/*"],
+      "@pages/*": ["./pages/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/stripe-payment/stripe-payment.js",
+    "pages/api/form.js",
+    "pages/stripe-payment/index.js",
+    "pages/api/app.js"
+  ],
+  "exclude": ["node_modules", "jest.setup.js", "pages/test/test.tsx"]
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /vps
+Disallow: /shopping-cart
+Disallow: /legal
+Disallow: /contact-us
+Disallow: /try-enscale

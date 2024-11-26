@@ -1,0 +1,18 @@
+[
+  {
+    "tabTitle": "Tab 1",
+    "dropdownOptions": [
+      { "option": "Option 1", "period": "1-2", "price": 1000 },
+      { "option": "Option 2", "period": "4-5", "price": 2000 },
+      { "option": "Option 3", "period": "1-4", "price": 3000 }
+    ]
+  },
+  {
+    "tabTitle": "Tab 2",
+    "dropdownOptions": [
+      { "option": "Option 4", "period": "9-12", "price": 4000 },
+      { "option": "Option 5", "period": "2-4", "price": 5000 },
+      { "option": "Option 6", "period": "6-3", "price": 6000 }
+    ]
+  }
+]

@@ -1,0 +1,2850 @@
+{
+  "product-families": [
+    {
+      "name": "VM",
+      "products": [
+        {
+          "label": "Manchester",
+          "SKU-stub": "VM-MAN-1",
+          "price": [
+            {
+              "currency": "GBP",
+              "amount": 10,
+              "period": "monthly"
+            },
+            {
+              "currency": "GBP",
+              "amount": 120,
+              "period": "yearly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 12.5,
+              "period": "monthly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 150,
+              "period": "yearly"
+            },
+            {
+              "currency": "USD",
+              "amount": 15,
+              "period": "monthly"
+            },
+            {
+              "currency": "USD",
+              "amount": 180,
+              "period": "yearly"
+            }
+          ],
+          "attributes": [
+            {
+              "label": "Plesk",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "plesk-web-admin",
+                  "label": "Web Admin (10 domain limit)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "plesk-web-pro",
+                  "label": "Web Pro (30 domain limit)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 36,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 4.25,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 51,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 4.5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 54,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "plesk-web-host",
+                  "label": "Web Host (Unlimited domains)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "vCPU",
+              "SKU-stub": "vcpu",
+              "type": "unit",
+              "required": true,
+              "min": 1,
+              "max": 32,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 5,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 60,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "RAM (GB)",
+              "SKU-stub": "ram",
+              "type": "unit",
+              "required": true,
+              "min": 2,
+              "max": 64,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 36,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "disk space (GB)",
+              "SKU-stub": "disk",
+              "type": "unit",
+              "increment": 25,
+              "min": 50,
+              "max": 500,
+              "required": true,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 2.5,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 30,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "Traffic (TB per month)",
+              "SKU-stub": "traffic",
+              "type": "tiered",
+              "increment": 10,
+              "required": true,
+              "tiers": [
+                {
+                  "min": 10,
+                  "max": 10,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "min": 20,
+                  "max": 100,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "IPv4",
+              "SKU-stub": "ipv4",
+              "type": "tiered",
+              "increment": 1,
+              "required": true,
+              "tiers": [
+                {
+                  "min": 1,
+                  "max": 1,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "min": 2,
+                  "max": 32,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 24,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 2.5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 30,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 2.75,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 33,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "IPv6",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "ipv6",
+                  "label": "/64",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "CloudLinux",
+              "type": "flat",
+              "required": false,
+              "options": [
+                {
+                  "SKU-stub": "cloudlinux-solo",
+                  "label": "Solo",
+                  "requires": [
+                    {
+                      "plesk-web-admin": {}
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "cloudlinux-pro",
+                  "label": "Pro",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 12.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 151.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 13.2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 158.4,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "KernelCare",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "kernelcare",
+                  "label": "Enterprise",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Server Security",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "imunifyav",
+                  "label": "Malware Scanner",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunifyav-plus",
+                  "label": "Malware Scanner and Cleaner",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 24,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 36,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 36,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-1",
+                  "label": "Multi-layered server protection (1 user)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-30",
+                  "label": "Multi-layered server protection (30 users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 72,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 7.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 87.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 7.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 91.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-250",
+                  "label": "Multi-layered server protection (250 users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 12.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 151.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 13.2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 158.4,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-unlimited",
+                  "label": "Multi-layered server protection (unlimited users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 15,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 180,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 18.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 223.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 20,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 240,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "LiteSpeed",
+              "type": "flat",
+              "required": false,
+              "options": [
+                {
+                  "SKU-stub": "litespeed-web-host-lite",
+                  "label": "Web Host Lite",
+                  "requires": [
+                    {
+                      "ram": [
+                        {
+                          "max": 8
+                        }
+                      ]
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 15,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 180,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 18.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 223.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 20,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 240,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "litespeed-web-host-essential",
+                  "label": "Web Host Essential",
+                  "requires": [
+                    {
+                      "ram": [
+                        {
+                          "min": 9
+                        }
+                      ]
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 25,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 300,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 30,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 360,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 30,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 360,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Chicago",
+          "SKU-stub": "VM-CHI-1",
+          "price": [
+            {
+              "currency": "GBP",
+              "amount": 8,
+              "period": "monthly"
+            },
+            {
+              "currency": "GBP",
+              "amount": 96,
+              "period": "yearly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 12,
+              "period": "monthly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 144,
+              "period": "yearly"
+            },
+            {
+              "currency": "USD",
+              "amount": 10,
+              "period": "monthly"
+            },
+            {
+              "currency": "USD",
+              "amount": 120,
+              "period": "yearly"
+            }
+          ],
+          "attributes": [
+            {
+              "label": "Plesk",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "plesk-web-admin",
+                  "label": "Web Admin (10 domain limit)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "plesk-web-pro",
+                  "label": "Web Pro (30 domain limit)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 36,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 4.25,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 51,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 4.5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 54,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "plesk-web-host",
+                  "label": "Web Host (Unlimited domains)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "vCPU",
+              "SKU-stub": "vcpu",
+              "type": "unit",
+              "required": true,
+              "min": 1,
+              "max": 32,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 5,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 60,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "RAM (GB)",
+              "SKU-stub": "ram",
+              "type": "unit",
+              "required": true,
+              "min": 2,
+              "max": 64,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 36,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "disk space (GB)",
+              "SKU-stub": "disk",
+              "type": "tiered",
+              "increment": 25,
+              "required": true,
+              "min": 50,
+              "max": 500,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 2.5,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 30,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "Traffic (TB per month)",
+              "SKU-stub": "traffic",
+              "type": "tiered",
+              "increment": 10,
+              "required": true,
+              "tiers": [
+                {
+                  "min": 10,
+                  "max": 10,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "min": 20,
+                  "max": 100,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "IPv4",
+              "SKU-stub": "ipv4",
+              "type": "tiered",
+              "increment": 1,
+              "required": true,
+              "tiers": [
+                {
+                  "min": 1,
+                  "max": 1,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "min": 2,
+                  "max": 32,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 24,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 2.5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 30,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 2.75,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 33,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "IPv6",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "ipv6",
+                  "label": "/64",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "CloudLinux",
+              "type": "flat",
+              "required": false,
+              "options": [
+                {
+                  "SKU-stub": "cloudlinux-solo",
+                  "label": "Solo",
+                  "requires": [
+                    {
+                      "plesk-web-admin": {}
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "cloudlinux-pro",
+                  "label": "Pro",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 12.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 151.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 13.2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 158.4,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "KernelCare",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "kernelcare",
+                  "label": "Enterprise",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Server Security",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "imunifyav",
+                  "label": "Malware Scanner",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunifyav-plus",
+                  "label": "Malware Scanner and Cleaner",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 24,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 36,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 36,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-1",
+                  "label": "Multi-layered server protection (1 user)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-30",
+                  "label": "Multi-layered server protection (30 users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 72,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 7.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 87.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 7.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 91.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-250",
+                  "label": "Multi-layered server protection (250 users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 12.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 151.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 13.2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 158.4,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-unlimited",
+                  "label": "Multi-layered server protection (unlimited users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 15,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 180,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 18.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 223.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 20,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 240,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "LiteSpeed",
+              "type": "flat",
+              "required": false,
+              "options": [
+                {
+                  "SKU-stub": "litespeed-web-host-lite",
+                  "label": "Web Host Lite",
+                  "requires": [
+                    {
+                      "ram": [
+                        {
+                          "max": 8
+                        }
+                      ]
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 15,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 180,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 18.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 223.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 20,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 240,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "litespeed-web-host-essential",
+                  "label": "Web Host Essential",
+                  "requires": [
+                    {
+                      "ram": [
+                        {
+                          "min": 9
+                        }
+                      ]
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 25,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 300,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 30,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 360,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 30,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 360,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Singapore",
+          "SKU-stub": "VM-SIN-1",
+          "price": [
+            {
+              "currency": "GBP",
+              "amount": 20,
+              "period": "monthly"
+            },
+            {
+              "currency": "GBP",
+              "amount": 240,
+              "period": "yearly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 20,
+              "period": "monthly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 240,
+              "period": "yearly"
+            },
+            {
+              "currency": "USD",
+              "amount": 20,
+              "period": "monthly"
+            },
+            {
+              "currency": "USD",
+              "amount": 240,
+              "period": "yearly"
+            }
+          ],
+          "attributes": [
+            {
+              "label": "Plesk",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "plesk-web-admin",
+                  "label": "Web Admin (10 domain limit)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "plesk-web-pro",
+                  "label": "Web Pro (30 domain limit)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 36,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 4.25,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 51,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 4.5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 54,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "plesk-web-host",
+                  "label": "Web Host (Unlimited domains)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "vCPU",
+              "SKU-stub": "vcpu",
+              "type": "unit",
+              "required": true,
+              "min": 1,
+              "max": 32,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 5,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 60,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "RAM (GB)",
+              "SKU-stub": "ram",
+              "type": "unit",
+              "required": true,
+              "min": 2,
+              "max": 64,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 36,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "disk space (GB)",
+              "SKU-stub": "disk",
+              "type": "tiered",
+              "increment": 25,
+              "required": true,
+              "min": 50,
+              "max": 500,
+              "price": [
+                {
+                  "currency": "GBP",
+                  "amount": 2.5,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "GBP",
+                  "amount": 30,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 6.3,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "EUR",
+                  "amount": 75.6,
+                  "period": "yearly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 6.6,
+                  "period": "monthly"
+                },
+                {
+                  "currency": "USD",
+                  "amount": 79.2,
+                  "period": "yearly"
+                }
+              ]
+            },
+            {
+              "label": "Traffic (TB per month)",
+              "SKU-stub": "traffic",
+              "type": "tiered",
+              "increment": 10,
+              "required": true,
+              "tiers": [
+                {
+                  "min": 10,
+                  "max": 10,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "min": 20,
+                  "max": 100,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "IPv4",
+              "SKU-stub": "ipv4",
+              "type": "tiered",
+              "increment": 1,
+              "required": true,
+              "tiers": [
+                {
+                  "min": 1,
+                  "max": 1,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "min": 2,
+                  "max": 32,
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 24,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 2.5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 30,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 2.75,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 33,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "IPv6",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "ipv6",
+                  "label": "/64",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "CloudLinux",
+              "type": "flat",
+              "required": false,
+              "options": [
+                {
+                  "SKU-stub": "cloudlinux-solo",
+                  "label": "Solo",
+                  "requires": [
+                    {
+                      "plesk-web-admin": {}
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "cloudlinux-pro",
+                  "label": "Pro",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 12.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 151.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 13.2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 158.4,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "KernelCare",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "kernelcare",
+                  "label": "Enterprise",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "Server Security",
+              "type": "flat",
+              "required": true,
+              "options": [
+                {
+                  "SKU-stub": "imunifyav",
+                  "label": "Malware Scanner",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 0,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 0,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunifyav-plus",
+                  "label": "Malware Scanner and Cleaner",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 24,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 36,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 36,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-1",
+                  "label": "Multi-layered server protection (1 user)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 5,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 60,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 6.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 75.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 6.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 79.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-30",
+                  "label": "Multi-layered server protection (30 users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 72,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 7.3,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 87.6,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 7.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 91.2,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-250",
+                  "label": "Multi-layered server protection (250 users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 10,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 120,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 12.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 151.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 13.2,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 158.4,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "imunify360-unlimited",
+                  "label": "Multi-layered server protection (unlimited users)",
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 15,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 180,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 18.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 223.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 20,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 240,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "label": "LiteSpeed",
+              "type": "flat",
+              "required": false,
+              "options": [
+                {
+                  "SKU-stub": "litespeed-web-host-lite",
+                  "label": "Web Host Lite",
+                  "requires": [
+                    {
+                      "ram": [
+                        {
+                          "max": 8
+                        }
+                      ]
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 15,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 180,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 18.6,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 223.2,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 20,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 240,
+                      "period": "yearly"
+                    }
+                  ]
+                },
+                {
+                  "SKU-stub": "litespeed-web-host-essential",
+                  "label": "Web Host Essential",
+                  "requires": [
+                    {
+                      "ram": [
+                        {
+                          "min": 9
+                        }
+                      ]
+                    }
+                  ],
+                  "price": [
+                    {
+                      "currency": "GBP",
+                      "amount": 25,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "GBP",
+                      "amount": 300,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 30,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "EUR",
+                      "amount": 360,
+                      "period": "yearly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 30,
+                      "period": "monthly"
+                    },
+                    {
+                      "currency": "USD",
+                      "amount": 360,
+                      "period": "yearly"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SSL",
+      "products": [
+        {
+          "label": "Standard",
+          "SKU-stub": "SSL-std",
+          "price": [
+            {
+              "currency": "GBP",
+              "amount": 40,
+              "period": "yearly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 30,
+              "period": "yearly"
+            },
+            {
+              "currency": "USD",
+              "amount": 30,
+              "period": "yearly"
+            }
+          ],
+          "meta": [
+            {
+              "name": "domain",
+              "type": "text",
+              "label": "Domain name",
+              "description": "Domain the certificate should be validated for"
+            }
+          ]
+        },
+        {
+          "label": "Wildcard",
+          "SKU-stub": "SSL-wild",
+          "price": [
+            {
+              "currency": "GBP",
+              "amount": 99,
+              "period": "yearly"
+            },
+            {
+              "currency": "EUR",
+              "amount": 125,
+              "period": "yearly"
+            },
+            {
+              "currency": "USD",
+              "amount": 125,
+              "period": "yearly"
+            }
+          ],
+          "meta": [
+            {
+              "name": "domain",
+              "type": "text",
+              "label": "Domain name",
+              "description": "Domain the certificate should be validated for"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

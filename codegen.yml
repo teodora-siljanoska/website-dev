@@ -1,0 +1,6 @@
+overwrite: true
+schema: `${process.env.NEXT_PUBLIC_STRAPI_URI}/graphql`
+generates:
+  ./utils/types.ts:
+    plugins:
+      - 'typescript'
