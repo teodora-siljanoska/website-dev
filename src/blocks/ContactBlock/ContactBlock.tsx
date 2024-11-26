@@ -4,7 +4,8 @@ import Button from '@components/Button';
 import lines from './assets/lines.svg';
 import Image from 'next/legacy/image';
 import findMediaUrl from '@utils/findMediaUrl';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+//import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ReactMarkdown from 'react-markdown';
 import ContactForm from '@components/ContactForm';
 import Link from 'next/link';
 

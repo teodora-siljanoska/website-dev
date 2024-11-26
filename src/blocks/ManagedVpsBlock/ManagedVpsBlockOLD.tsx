@@ -1,6 +1,7 @@
 import { ComponentPageBlocksManagedVps } from '@utils/types';
 import React, { useContext, useState } from 'react';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+//import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ReactMarkdown from 'react-markdown';
 import check from './assets/check.svg';
 import StandardFeaturesCheckList from '@components/StandardFeaturesCheckList';
 import { CurrencyContext } from '@utils/contexts/currencyContext';

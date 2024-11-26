@@ -1,4 +1,4 @@
-import { geolocation } from '@vercel/edge';
+import { geolocation } from '@vercel/functions';
 
 export const config = {
     runtime: 'edge',

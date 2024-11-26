@@ -1,6 +1,7 @@
 import { ComponentPageBlocksManagedVps, LocationEntity } from '@utils/types';
 import React, { useContext, useEffect, useState } from 'react';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+//import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ReactMarkdown from 'react-markdown';
 import check from './assets/check.svg';
 import cros from './assets/cros.svg';
 import StandardFeaturesCheckList from '@components/StandardFeaturesCheckList';

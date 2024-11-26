@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Image from 'next/legacy/image';
 import findMediaUrl from '@utils/findMediaUrl';
 import team from './assets/team.png';
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+//import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import ReactMarkdown from 'react-markdown';
 import { ComponentPageBlocksMeetTheTeam } from '@utils/types';
 import { useMediaQuery } from 'react-responsive';
 
