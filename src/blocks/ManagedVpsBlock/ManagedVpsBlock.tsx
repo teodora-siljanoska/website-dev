@@ -659,7 +659,7 @@ function ManagedVpsBlock({
                   ),
                   !isChecked ? 'Monthly' : 'Yearly'
                 );
-                window.location.href = `${defaultBox?.buttonBoxLink}` ?? '/vps';
+                window.location.href = defaultBox?.buttonBoxLink ?? '/vps'; // No string interpolation needed here
               }}
             >
               {defaultBox?.buttonBoxCta}

@@ -1,11 +1,15 @@
 import React from "react";
 import { hasCookie, setCookie } from "cookies-next";
 
-const CookieConsent = (props:any) => {
+const CookieConsent = (props: any) => {
   const [showConsent, setShowConsent] = React.useState(true);
 
   React.useEffect(() => {
-    setShowConsent(hasCookie("localConsent"));
+    const checkCookie = async () => {
+      const cookieExists = await hasCookie("localConsent"); // Resolve the Promise
+      setShowConsent(cookieExists); // Ensure a boolean value is passed
+    };
+    checkCookie();
   }, []);
 
   const acceptCookie = () => {
@@ -23,7 +27,10 @@ const CookieConsent = (props:any) => {
         <span className="mr-16 font-['Mont-semibold'] text-lg text-white">
           This website uses cookies to improve user experience. By using our website you consent to all cookies in accordance with our Cookie Policy.
         </span>
-        <button className="justify-center rounded-full border-2  border-darkTeal  bg-darkTeal px-[42px] py-[12px]  font-['Mont-semibold'] text-white transition duration-500 hover:border-2 hover:border-lightTeal hover:bg-lightTeal hover:text-white" onClick={() => acceptCookie()}>
+        <button
+          className="justify-center rounded-full border-2  border-darkTeal  bg-darkTeal px-[42px] py-[12px]  font-['Mont-semibold'] text-white transition duration-500 hover:border-2 hover:border-lightTeal hover:bg-lightTeal hover:text-white"
+          onClick={acceptCookie}
+        >
           Accept
         </button>
       </div>

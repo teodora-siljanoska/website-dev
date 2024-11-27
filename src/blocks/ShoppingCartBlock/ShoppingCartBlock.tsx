@@ -450,9 +450,10 @@ function ShoppingCartBlock({ title, headerData, footerData }: P): JSX.Element {
     setIsEmailFormOpen(false);
   };
 
-  const loginUrl = new URL(
-    `${process.env.NEXT_PUBLIC_LOGIN_URL?.toString()}stripe-payment` ?? ''
-  );
+  /* const loginUrl = new URL(
+     `${process.env.NEXT_PUBLIC_LOGIN_URL?.toString()}stripe-payment` ?? ''
+   );*/
+  const loginUrl = new URL(`${process.env.NEXT_PUBLIC_LOGIN_URL?.toString()}stripe-payment`);
 
   const onClickEmptyCart = () => {
     setCartItems([]);
